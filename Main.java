@@ -1,4 +1,3 @@
-package main;
 import java.lang.NumberFormatException;
 
 public class Main {
