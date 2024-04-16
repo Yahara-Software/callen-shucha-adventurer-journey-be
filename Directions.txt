@@ -1,0 +1,1 @@
+To run the program, run Main (a java program) with the directions as the only argument.
