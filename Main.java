@@ -26,7 +26,13 @@ public class Main {
 				strNumber += chrFirstChar;//Add it to the number
 			}else if(strValidDirections.indexOf(chrFirstChar) != -1)//If next char is a valid direction
 			{
+				if(strNumber == "")
+				{
+					System.out.println("Error: A direction was found without a preceding number. Please check your input.");
+					return;
+				}
 				double dblDistance = Double.parseDouble(strNumber);
+				
 				strNumber = "";
 				switch(chrFirstChar)
 				{
@@ -50,6 +56,11 @@ public class Main {
 			}
 			
 			strPath = strPath.substring(1);//Cut down the remaining string
+		}
+		
+		if(strNumber != "")
+		{
+			System.out.println("Warning: Input contained a trailing number without any direction. It was ignored for this result.");
 		}
 		
 		
