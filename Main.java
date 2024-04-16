@@ -1,4 +1,5 @@
 package main;
+import java.lang.NumberFormatException;
 
 public class Main {
 
@@ -31,9 +32,19 @@ public class Main {
 					System.out.println("Error: A direction was found without a preceding number. Please check your input.");
 					return;
 				}
-				double dblDistance = Double.parseDouble(strNumber);
 				
-				strNumber = "";
+				double dblDistance;
+				try
+				{
+					dblDistance = Double.parseDouble(strNumber);//Try to parse the number
+				}catch(NumberFormatException e)
+				{
+					System.out.println("Error: An invalid string was found preceding a direction.");
+					return;
+				}
+				
+				strNumber = "";//Reset the stored digits
+				
 				switch(chrFirstChar)
 				{
 					case 'F':
